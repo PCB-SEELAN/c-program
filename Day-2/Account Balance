@@ -1,0 +1,39 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main() {
+    float balance;
+    int process;
+    scanf("%f", &balance);
+    scanf("%d", &process);
+    
+    switch (process) {
+        case 1: {
+            float deposit;
+            scanf("%f", &deposit);
+            balance += deposit;
+            printf("%.0f", balance);
+            break;
+        }
+        case 2: {
+            float withdraw;
+            scanf("%f", &withdraw);
+            if (withdraw > balance) {
+                printf("Insufficient Balance");
+            } else {
+                balance -= withdraw;
+                printf("%.0f", balance);
+            }
+            break;
+        }
+        default:
+            printf("Invalid Input");
+    }
+    
+    return 0;
+}
